@@ -1,56 +1,5 @@
 {
-  "todos": [
-    {
-      "id": 1,
-      "title": "Todo78",
-      "description": "Description 1"
-    },
-    {
-      "title": "testtttttt",
-      "description": "",
-      "id": 3
-    },
-    {
-      "title": "wow",
-      "description": "",
-      "id": 4
-    },
-    {
-      "title": "hello",
-      "description": "",
-      "id": 5
-    },
-    {
-      "title": "Hellooo",
-      "description": "",
-      "isBookmarked": false,
-      "id": 6
-    }
-  ],
-  "recipes": [
-    {
-      "id": 100,
-      "name": "Recipe 1",
-      "description": "Recipe Description 1"
-    },
-    {
-      "id": 101,
-      "name": "Recipe 2",
-      "description": "Recipe Description 2"
-    }
-  ],
-  "bookmarks": [
-    {
-      "itemType": "todo",
-      "id": 3
-    },
-    {
-      "itemType": "todo",
-      "id": 1
-    },
-    {
-      "itemType": "todo",
-      "id": 5
-    }
-  ]
+  "todos": [],
+  "recipes": [],
+  "bookmarks": []
 }
