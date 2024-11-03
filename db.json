@@ -1,0 +1,52 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "title": "Todo 1",
+      "description": "Description 1",
+      "isBookmarked": true
+    },
+    {
+      "id": "2",
+      "title": "Todo 2",
+      "description": "Description 2",
+      "isBookmarked": true
+    },
+    {
+      "id": "97b3",
+      "title": "Hellooo",
+      "description": "",
+      "isBookmarked": true
+    },
+    {
+      "id": "2c95",
+      "title": "test",
+      "description": "",
+      "isBookmarked": false
+    },
+    {
+      "id": "4b2b",
+      "title": "testt",
+      "description": "",
+      "isBookmarked": true
+    },
+    {
+      "id": "c9f4",
+      "title": "test",
+      "description": "",
+      "isBookmarked": true
+    },
+    {
+      "id": "aa68",
+      "title": "Test",
+      "description": "",
+      "isBookmarked": false
+    },
+    {
+      "id": "a19e",
+      "title": "",
+      "description": "",
+      "isBookmarked": false
+    }
+  ]
+}

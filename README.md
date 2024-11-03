@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Todo List - Cache normalization
+
+This application demonstrates how to integrate **React Query** with **Redux Toolkit** to create a normalized caching layer in a React application.
+
+- **React Query**: Manages data fetching and caching. Separate collections (`todos` and `bookmarkedTodos`) are retrieved and cached independently at the API level.
+- **Redux Toolkit**: Provides a normalized cache layer that serves as the single source of truth for the view.
+
+It leverages `createEntityAdapter` from Redux Toolkit to facilitate the normalization logic.
+
+Important to notice that components consume data exclusively from the Redux store and not from React-Query collections.
 
 ## Getting Started
 
-First, run the development server:
+### Installation & Running
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Install dependencies**:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```bash
+   npm install
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. **Start the mock server**:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   npx json-server --watch db.json --port 3000
+   ```
 
-## Learn More
+3. **Run the Next.js app**:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Open the app**: Go to [http://localhost:3000](http://localhost:3000).
