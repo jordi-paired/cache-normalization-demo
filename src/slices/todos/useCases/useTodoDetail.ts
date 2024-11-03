@@ -9,7 +9,7 @@ export const useTodoDetail = (id: string) => {
   const dispatch = useDispatch();
 
   const { isLoading, isError } = useQuery({
-    queryKey: ["todos"],
+    queryKey: ["todo", id],
     queryFn: async () => {
       const todo = await fetchTodo(id);
       dispatch(addTodo(todo));
