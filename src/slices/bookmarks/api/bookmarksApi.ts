@@ -1,20 +1,27 @@
 import axios from "axios";
 
-import { TodoDto } from "@/slices/todos/api/dtos/todoDto";
+import { Bookmark } from "../types";
 
-const API_URL = "http://localhost:3000";
+const API_URL = "http://localhost:3001";
 
-export const fetchBookmarkedTodos = async (): Promise<TodoDto[]> => {
-  const response = await axios.get<TodoDto[]>(`${API_URL}/todos`, {
-    params: { isBookmarked: true },
+export const fetchBookmarks = async (page: number, limit: number) => {
+  const response = await axios.get<Bookmark[]>(`${API_URL}/server/bookmarks`, {
+    params: {
+      _page: page,
+      _limit: limit,
+    },
   });
   return response.data;
 };
 
-export const bookmarkTodo = async (todoId: string): Promise<void> => {
-  await axios.patch(`${API_URL}/todos/${todoId}`, { isBookmarked: true });
+export const bookmarkItem = async (data: {
+  itemType: "todo";
+  id: string;
+}): Promise<Bookmark> => {
+  const response = await axios.post<Bookmark>(`${API_URL}/bookmarks`, data);
+  return response.data;
 };
 
-export const unbookmarkTodo = async (todoId: string): Promise<void> => {
-  await axios.patch(`${API_URL}/todos/${todoId}`, { isBookmarked: false });
+export const unbookmarkItem = async (bookmarkId: string): Promise<void> => {
+  await axios.delete(`${API_URL}/bookmarks/${bookmarkId}`);
 };

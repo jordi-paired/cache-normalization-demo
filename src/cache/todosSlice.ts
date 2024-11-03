@@ -1,25 +1,22 @@
 import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
 
-import { Todo } from "../slices/todos/domain/types";
 import { RootState } from "@/core/redux";
+import { Todo } from "@/slices/todos/types";
 
 const todosAdapter = createEntityAdapter<Todo>();
 
-const initialState = todosAdapter.getInitialState();
-
 const todosSlice = createSlice({
   name: "todos",
-  initialState,
+  initialState: todosAdapter.getInitialState(),
   reducers: {
     addTodos: todosAdapter.upsertMany,
+    addTodo: todosAdapter.upsertOne,
     updateTodo: todosAdapter.updateOne,
-    upsertTodo: todosAdapter.upsertOne,
     removeTodo: todosAdapter.removeOne,
   },
 });
 
-export const { addTodos, updateTodo, upsertTodo, removeTodo } =
-  todosSlice.actions;
+export const { addTodos, addTodo, updateTodo, removeTodo } = todosSlice.actions;
 export default todosSlice.reducer;
 
 export const todosSelectors = todosAdapter.getSelectors<RootState>(

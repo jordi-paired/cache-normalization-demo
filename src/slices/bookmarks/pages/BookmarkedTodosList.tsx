@@ -3,10 +3,20 @@
 import Link from "next/link";
 import React from "react";
 
-import { useBookmarkedTodos } from "../useCases/useBookmarkedTodos";
+import { useBookmarks } from "../useCases/useBookmarks";
 
 export const BookmarkedTodosList: React.FC = () => {
-  const { bookmarkedTodos } = useBookmarkedTodos();
+  const {
+    bookmarks,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+    isLoading,
+  } = useBookmarks();
+
+  if (isLoading) {
+    return <div className="text-center p-6">Loading...</div>;
+  }
 
   return (
     <div className="max-w-3xl mx-auto p-6">
@@ -21,16 +31,15 @@ export const BookmarkedTodosList: React.FC = () => {
       <div className="bg-white rounded-lg shadow p-6">
         <div className="flex items-center gap-2 mb-6">
           <h1 className="text-2xl font-bold text-gray-800">Bookmarked Todos</h1>
-          <span className="text-yellow-500 text-2xl">⭐</span>
         </div>
 
         <div className="divide-y">
-          {bookmarkedTodos.map((todo) => (
-            <Link href={`/todos/${todo.id}`} key={todo.id}>
+          {bookmarks.map((item) => (
+            <Link href={`/todos/${item.id}`} key={item.id}>
               <div className="py-4 px-2 hover:bg-gray-50 transition-colors group">
                 <div className="flex items-center justify-between">
                   <span className="font-medium text-gray-800 group-hover:text-blue-600 transition-colors">
-                    {todo.title}
+                    {item.item?.title}
                   </span>
                   <span className="text-yellow-500">⭐</span>
                 </div>
@@ -38,6 +47,16 @@ export const BookmarkedTodosList: React.FC = () => {
             </Link>
           ))}
         </div>
+
+        {hasNextPage && (
+          <button
+            onClick={() => fetchNextPage()}
+            disabled={isFetchingNextPage}
+            className="mt-4 w-full py-2 px-4 bg-blue-50 text-blue-600 rounded hover:bg-blue-100 disabled:opacity-50"
+          >
+            {isFetchingNextPage ? "Loading more..." : "Load More"}
+          </button>
+        )}
       </div>
     </div>
   );

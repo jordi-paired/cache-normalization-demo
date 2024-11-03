@@ -1,52 +1,56 @@
 {
   "todos": [
     {
-      "id": "1",
-      "title": "Todo 1",
-      "description": "Description 1",
-      "isBookmarked": true
+      "id": 1,
+      "title": "Todo78",
+      "description": "Description 1"
     },
     {
-      "id": "2",
-      "title": "Todo 2",
-      "description": "Description 2",
-      "isBookmarked": true
+      "title": "testtttttt",
+      "description": "",
+      "id": 3
     },
     {
-      "id": "97b3",
+      "title": "wow",
+      "description": "",
+      "id": 4
+    },
+    {
+      "title": "hello",
+      "description": "",
+      "id": 5
+    },
+    {
       "title": "Hellooo",
       "description": "",
-      "isBookmarked": true
+      "isBookmarked": false,
+      "id": 6
+    }
+  ],
+  "recipes": [
+    {
+      "id": 100,
+      "name": "Recipe 1",
+      "description": "Recipe Description 1"
     },
     {
-      "id": "2c95",
-      "title": "test",
-      "description": "",
-      "isBookmarked": false
+      "id": 101,
+      "name": "Recipe 2",
+      "description": "Recipe Description 2"
+    }
+  ],
+  "bookmarks": [
+    {
+      "itemType": "todo",
+      "id": 3
     },
     {
-      "id": "4b2b",
-      "title": "testt",
-      "description": "",
-      "isBookmarked": true
+      "itemType": "todo",
+      "id": 1
     },
     {
-      "id": "c9f4",
-      "title": "test",
-      "description": "",
-      "isBookmarked": true
-    },
-    {
-      "id": "aa68",
-      "title": "Test",
-      "description": "",
-      "isBookmarked": false
-    },
-    {
-      "id": "a19e",
-      "title": "",
-      "description": "",
-      "isBookmarked": false
+      "itemType": "todo",
+      "id": 5
     }
   ]
 }

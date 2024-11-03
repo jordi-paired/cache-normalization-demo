@@ -2,21 +2,19 @@ import { useQuery } from "@tanstack/react-query";
 import { useSelector, useDispatch } from "react-redux";
 
 import { fetchTodo } from "../api/todosApi";
-import { todosSelectors, upsertTodo } from "@/cache/todosSlice";
+import { todosSelectors, addTodo } from "@/cache/todosSlice";
 import { RootState } from "@/core/redux";
 
 export const useTodoDetail = (id: string) => {
   const dispatch = useDispatch();
 
-  const getTodo = async () => {
-    const data = await fetchTodo(id);
-    dispatch(upsertTodo(data));
-    return data;
-  };
-
   const { isLoading, isError } = useQuery({
     queryKey: ["todos"],
-    queryFn: getTodo,
+    queryFn: async () => {
+      const todo = await fetchTodo(id);
+      dispatch(addTodo(todo));
+      return todo;
+    },
   });
 
   const todo = useSelector((state: RootState) =>

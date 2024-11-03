@@ -22,7 +22,7 @@ Important to notice that components consume data exclusively from the Redux stor
 2. **Start the mock server**:
 
    ```bash
-   npx json-server --watch db.json --port 3000
+   npx json-server --watch db.json --port 3000 --routes json-server.json
    ```
 
 3. **Run the Next.js app**:

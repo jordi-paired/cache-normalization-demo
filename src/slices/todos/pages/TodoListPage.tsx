@@ -11,6 +11,8 @@ const TodoListPage: React.FC = () => {
   const [title, setTitle] = useState("");
   const { createTodo } = useCreateTodo();
 
+  console.log({ todos });
+
   const onCreate = () => {
     createTodo({ title, description: "", isBookmarked: false });
   };

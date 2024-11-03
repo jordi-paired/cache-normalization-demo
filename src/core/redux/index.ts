@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 
+import bookmarksReducer from "@/cache/bookmarksSlice";
 import todosReducer from "@/cache/todosSlice";
 
 export const store = configureStore({
   reducer: {
     todos: todosReducer,
+    bookmarks: bookmarksReducer,
   },
 });
 

@@ -2,8 +2,8 @@
 {
   "plugins": ["import", "prettier"],
   "extends": [
-  "next/core-web-vitals", 
-  "next/typescript",
+    "next/core-web-vitals", 
+    "next/typescript",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
