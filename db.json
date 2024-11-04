@@ -1,5 +1,11 @@
 {
-  "todos": [],
+  "todos": [
+    {
+      "title": "First Todo",
+      "description": "",
+      "id": 1
+    }
+  ],
   "recipes": [],
   "bookmarks": []
 }

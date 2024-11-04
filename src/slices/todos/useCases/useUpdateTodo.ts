@@ -1,19 +1,7 @@
-import { useMutation } from "@tanstack/react-query";
-import { useDispatch } from "react-redux";
-
-import { updateTodo as updateTodoApi } from "../api/todosApi";
-import { Todo } from "../types";
-import { updateTodo } from "@/cache/todosSlice";
+import { useMutationUpdateTodo } from "../api/updateTodo";
 
 export const useUpdateTodo = () => {
-  const dispatch = useDispatch();
-
-  const { mutate } = useMutation({
-    mutationFn: updateTodoApi,
-    onMutate: async (updatedTodo: Partial<Todo> & { id: string }) => {
-      dispatch(updateTodo({ id: updatedTodo.id, changes: updatedTodo }));
-    },
-  });
+  const { mutate } = useMutationUpdateTodo();
 
   return { updateTodo: mutate };
 };
